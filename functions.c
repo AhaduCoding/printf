@@ -6,9 +6,9 @@
  */
 int print_c(va_list a)
 {
-	char x;
+	int x;
 
-	x = (va_arg(a, int));
+	x = va_arg(a, int);
 	_putchar(x);
 	return (1);
 }
@@ -24,6 +24,8 @@ int print_s(va_list a)
 	int c = 0;
 
 	x = va_arg(a, char *);
+	if (!x)
+		x = "(null)";
 	while (x[c])
 	{
 		_putchar(x[c]);
