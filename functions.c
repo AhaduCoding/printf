@@ -39,6 +39,7 @@ int print_s(va_list a)
  */
 int print_por(va_list a)
 {
+	(void)a;
 	_putchar('%');
 	return (1);
 }
