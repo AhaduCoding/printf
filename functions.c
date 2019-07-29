@@ -63,6 +63,7 @@ int print_id(va_list a)
 	{
 		_putchar('-');
 		var2 = x * (-1);
+		y++;
 	}
 	num = var2;
 	while (num > 9)
