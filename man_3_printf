@@ -1,0 +1,118 @@
+.TH man 3 "30 Jul 2019" "0.10" "_printf man page"
+.SH NAME
+_printf \- format and print data
+.SH SYNOPSIS
+.B printf
+\fI\,FORMAT \/\fR[\fI\,ARGUMENT\/\fR]...
+.br
+.B printf
+\fI\,OPTION\/\fR
+
+.SH DESCRIPTION
+.\" Add any additional description here
+.PP
+Print ARGUMENT(s) according to FORMAT. To use this function it has to be include de header file "holberton.h".
+FORMAT controls the output as in C printf.  Interpreted sequences are:
+.TP
+\e"
+double quote
+.TP
+\e\e
+backslash
+.TP
+\ea
+alert (BEL)
+.TP
+\eb
+backspace
+.TP
+\ec
+produce no further output
+.TP
+\ee
+escape
+.TP
+\ef
+form feed
+.TP
+\en
+new line
+.TP
+\er
+carriage return
+.TP
+\et
+horizontal tab
+.TP
+\ev
+vertical tab
+.TP
+\eNNN
+byte with octal value NNN (1 to 3 digits)
+.TP
+\exHH
+byte with hexadecimal value HH (1 to 2 digits)
+.TP
+\euHHHH
+Unicode (ISO/IEC 10646) character with hex value HHHH (4 digits)
+.TP
+\eUHHHHHHHH
+Unicode character with hex value HHHHHHHH (8 digits)
+.TP
+%%
+a single %
+.TP
+%b
+ARGUMENT as a string with '\e' escapes interpreted,
+except that octal escapes are of the form \e0 or \e0NNN
+.TP
+%q
+ARGUMENT is printed in a format that can be reused as shell input,
+escaping non\-printable characters with the proposed POSIX $'' syntax.
+.PP
+and all C format specifications ending with one of diouxXfeEgGcs, with
+ARGUMENTs converted to proper type first.  Variable widths are handled.
+.SH ARGUMENTS
+.TP
+%c
+Prints characters.
+.TP
+%s %S
+Prints strings.
+.TP
+%d
+Prints decimal (Base10)  numbers.
+.TP
+%i
+Prints integer numebrs.
+.TP
+%b
+The unsigned int argument is converted to binary.
+.TP
+%u
+Prints an unsigned decimal (base10) number.
+.TP
+%o
+Prints a number in octal (base8).
+.TP
+%x %X
+Prints a number in hexadecimal(base16) (%X for Uppercase format).
+.TP
+%p
+Prints the address of a variable.
+.TP
+%l
+Expects the function to print a long int sized integer argument.
+.TP
+%h
+Expects the function to print an int sized integer argument which was promoted from a short. 
+.TP
+%r
+Prints the reversed string.
+.TP
+%R
+Prints the rot13'ed string.
+.SH EXAMPLE
+_printf("To print the string %s, printing char %c or printing number %d\\n", "Abcde", 'A', 10);
+.SH AUTHOR
+Jorge Zafra, Carlos Molano.
