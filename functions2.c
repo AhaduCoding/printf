@@ -6,10 +6,10 @@
  */
 int print_u(va_list a)
 {
-	char x;
+	int x;
 
 	x = (va_arg(a, int));
-	return (1);
+	return (x);
 }
 /**
  * print_o - print octal number in base 8
@@ -18,10 +18,10 @@ int print_u(va_list a)
  */
 int print_o(va_list a)
 {
-	char x;
+	int x;
 
 	x = va_arg(a, int);
-	return (1);
+	return (x);
 }
 /**
  * print_x - print hexadecimal number base 16
@@ -30,10 +30,10 @@ int print_o(va_list a)
  */
 int print_x(va_list a)
 {
-	char x;
+	int x;
 
 	x = va_arg(a, int);
-	return (1);
+	return (x);
 }
 /**
  * print_X - print hexadecimal number with uppercase base 16
@@ -42,8 +42,8 @@ int print_x(va_list a)
  */
 int print_X(va_list a)
 {
-	char x;
+	int x;
 
 	x = va_arg(a, int);
-	return (1);
+	return (x);
 }
