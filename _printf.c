@@ -1,5 +1,27 @@
 #include "holberton.h"
 /**
+ * getfunction - gets the function choose
+ * @c: char to find
+ * Return: return a function
+ */
+int (*getfunction(char c))(va_list a)
+{
+	int c1;
+	choose l[] = {
+		{'c', print_c}, {'s', print_s}, {'%', print_por}, {'i', print_id},
+		{'d', print_id}, {'b', print_bin}, {'u', print_u}, {'o', print_o},
+		{'x', print_x}, {'X', print_X}, {'\0', NULL}
+	};
+	for (c1 = 0; l[c1].c != '\0'; c1++)
+	{
+		if (c == l[c1].c)
+		{
+			return (l[c1].p);
+		}
+	}
+	return (NULL);
+}
+/**
  * _printf - prints depends of the arguments.
  * @format: s for string, c for char, d for decimals, i for integers,
  * b for cast to binary, u for cast to unsigned decimal, o for print
@@ -9,15 +31,12 @@
  */
 int _printf(const char *format, ...)
 {
-	int c1 = 0, c2, x = 0;
-	choose list[] = {
-		{'c', print_c}, {'s', print_s}, {'%', print_por}, {'i', print_id},
-		{'d', print_id}, {'b', print_bin}, {'u', print_u}, {'o', print_o},
-		{'x', print_x}, {'X', print_X}, {'\0', NULL}
-	};
+	int c1 = 0, x = 0;
 	va_list elements;
 
 	va_start(elements, format);
+	if (!format)
+		return (-1);
 	while (format && format[c1])
 	{
 		if (format[c1] == '%')
@@ -28,15 +47,8 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
-				for (c2 = 0; list[c2].c != '\0'; c2++)
-				{
-					if (format[c1 + 1] == list[c2].c)
-					{
-						x = x + list[c2].p(elements);
-						c1 += 2;
-						break;
-					}
-				}
+				x = x + (getfunction(format[c1 + 1]))(elements);
+				c1 += 2;
 			}
 		}
 		else
