@@ -31,7 +31,7 @@ int (*getfunction(char c))(va_list a)
  */
 int _printf(const char *format, ...)
 {
-	int c1 = 0, x = -1, (*f)(va_list);
+	int c1 = 0, x = -1, (*f)(va_list), prueba = 0;
 	va_list elements;
 
 	va_start(elements, format);
@@ -40,33 +40,27 @@ int _printf(const char *format, ...)
 		x = 0;
 		while (format[c1] != '\0')
 		{
-			if (format[c1] == '%')
+			prueba = 0;
+			if (format[c1] == '%' && format[c1 + 1] == '\0')
 			{
-				if (format[c1 + 1] == '\0')
+				return (-1);
+			}
+			else if (format[c1] == '%' && format[c1 + 1] != '\0')
+			{
+				f = getfunction(format[c1 + 1]);
+				if (f)
 				{
-					return (-1);
+					x = x + f(elements);
+					c1 = c1 + 2;
 				}
 				else
-				{
-					f = getfunction(format[c1 + 1]);
-					if (f)
-					{
-						x = x + f(elements);
-						c1 = c1 + 2;
-					}
-					else
-					{
-						_putchar(format[c1]);
-						c1++;
-						x++;
-					}
-				}
+					prueba = 1;
 			}
-			else
+			if (prueba == 1 || format[c1] != '%')
 			{
 				_putchar(format[c1]);
-				x++;
 				c1++;
+				x++;
 			}
 		}
 	}
