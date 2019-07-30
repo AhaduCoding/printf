@@ -33,4 +33,5 @@ int print_S(va_list a, char *s, int *index);
 int switch_H(int sum, int *h, int y);
 int print_R(va_list a, char *s, int *index);
 int print_r(va_list a, char *s, int *index);
+int print_p(va_list a, char *s, int *index);
 #endif
