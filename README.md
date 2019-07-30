@@ -1,14 +1,14 @@
-# Readme _printf function
+# Readme _printf function 📚
 ------------
 
 Custom implementation of the function `printf` as a project for Holberton School. In this project we apply the knowledge that we have gotten  in C programming language.
 
 ------------
 
-### Description of function
+### Description of function 📚
 The functions in the `_printf()`  produce output according to a format . This function returns the number of characters printed, excluding the null byte used to end output to strings. To use this fuction is needed to include the header file `holberton.h`.
 
-#### Formats
+#### Formats 🛠
 * **%c:** prints characters.
 * **%s:** prints strings.
 * **%d:** prints decimal numbers.
@@ -28,8 +28,8 @@ The functions in the `_printf()`  produce output according to a format . This fu
 `int _printf(const char *format, ...);`
 
 ------------
-### Compile de file
-To a file with the function is necessary to add all the `*.c` involved in the program. For that reason to compile type:
+### Compile de file ⚙
+To compile a file with the function is necessary to add all the `*.c` involved in the program (functions, main files, etc). For that reason to compile type:
 
 `gcc -Wall -Werror -Wextra -pedantic *.c -o name_of_executable`
 
@@ -58,7 +58,7 @@ To execute te program type:
 ##### Print binaries numbers:
 * Input: `_printf("Number 10 in base 2 is: %b\n",  10);`
 
-* Output: `Number 10 in base 2 is: 8010`
+* Output: `Number 10 in base 2 is: 1010`
 
 ##### Print numbers in octal (base 8):
 * Input: `_printf("Number 10 in base 8 is: %\o",  10);`
@@ -74,6 +74,12 @@ To execute te program type:
 * Input: `_printf("%S\n", "Holberton\nSchool");`
 
 * Output: `Holberton\x0ASchool`
+
+##### Print adress of a variable:
+
+* Input: `void *vp = (void *)0x7ffe637541f0;  printf("Expected   : %p\n", vp);`
+
+* Output: `[0x7ffe637541f0]`
 
 ##### Print reversed strings:
 * Input: `_printf("%r\n", "Holberton");`
