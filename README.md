@@ -75,7 +75,7 @@ To execute te program type:
 
 * Output: `Holberton\x0ASchool`
 
-##### Print adress of a variable:
+##### Print address of a variable:
 
 * Input: `void *vp = (void *)0x7ffe637541f0;  printf("Expected   : %p\n", vp);`
 
