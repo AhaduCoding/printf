@@ -77,10 +77,19 @@ int print_p(va_list a, char *s, int *index)
 {
 	void *p1;
 	long int tam = 0, var;
-	int i, j, k = 0;
-	char *hex = "0123456789abcdef", arr[16] = "";
+	int i, j, z = 0, k = 0;
+	char *n = "(null)", *hex = "0123456789abcdef", arr[16] = "";
 
 	p1 = va_arg(a, void *);
+	if (!p1)
+	{
+		while (n[z] != '\0')
+		{
+			buffer(s, n[z], index);
+			z++;
+		}
+		return (z);
+	}
 	tam = (long int) p1;
 	buffer(s, '0', index);
 	buffer(s, 'x', index);
