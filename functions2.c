@@ -7,7 +7,6 @@
  * @index:position on buffer
  * Return: number of "characters" of element called
  */
-
 int impresion_o(int *a, int b, char *s, int *index)
 {
 	int c = 0, y = 0;
@@ -117,4 +116,71 @@ int print_o(va_list a, char *s, int *index)
 		y = impresion_o(arr, 32, s, index);
 	}
 	return (y);
+}
+/**
+ * print_2X - prints 2 digits hex
+ * @a: element of va_list type
+ * @s: buffer
+ * @index:position on buffer
+ * Return: number of "characters" of element called
+ */
+int print_2X(int a, char *s, int *index)
+{
+	int temp, a3[2] = {0};
+	int i = 0, j;
+
+	for (; i < 2; i++)
+	{
+		temp = a % 16;
+		if (temp >= 10)
+		{
+			a3[i] = switch_H(temp, a3, i);
+		}
+		else
+		{
+			a3[i] = temp;
+		}
+		a = a / 16;
+	}
+	for (j = i - 1; j >= 0; j--)
+	{
+		if (a3[j] == 'A' || a3[j] == 'B' || a3[j] == 'C' || a3[j] == 'D'
+			|| a3[j] == 'E' || a3[j] == 'F')
+			buffer(s, a3[j], index);
+		else
+			buffer(s, (a3[j] + '0'), index);
+	}
+	return (2);
+}
+/**
+ * print_S - print an alternative to a non printable char
+ * @a: element of va_list type
+ * @s: buffer
+ * @index:position on buffer
+ * Return: number of "characters" of element called
+ */
+int print_S(va_list a, char *s, int *index)
+{
+	int i;
+	int c = 0;
+	char *str = va_arg(a, char *);
+
+	if (str == NULL)
+		str = "(null)";
+	for (i = 0; str[i]; i++)
+	{
+		if (str[i] < 32 || str[i] >= 127)
+		{
+			buffer(s, '\\', index);
+			buffer(s, 'x', index);
+			c += 2;
+			c += print_2X((str[i]), s, index);
+		}
+		else
+		{
+			buffer(s, str[i], index);
+			c++;
+		}
+	}
+	return (c);
 }
