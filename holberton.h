@@ -29,4 +29,6 @@ int print_u(va_list a, char *s, int *index);
 int print_o(va_list a, char *s, int *index);
 int print_x(va_list a, char *s, int *index);
 int print_X(va_list a, char *s, int *index);
+int print_S(va_list a, char *s, int *index);
+int switch_H(int sum, int *h, int y);
 #endif
