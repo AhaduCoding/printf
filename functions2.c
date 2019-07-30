@@ -6,7 +6,7 @@
  * Return: number of "characters" of element called
  */
 
-int impresion_o(int *a, int b)
+int impresion_o(int *a, int b, char *s, int *index)
 {
 	int c = 0, y = 0;
 	int sum = 0, i, j;
@@ -34,7 +34,7 @@ int impresion_o(int *a, int b)
 		y++;
 	}
 	for (j = y - 1; j >= 0; j--)
-		_putchar(octal[j] + '0');
+		buffer(s, (octal[j] + '0'), index);
 	return (y);
 }
 /**
@@ -42,7 +42,7 @@ int impresion_o(int *a, int b)
  * @a: element of va_list type
  * Return: number of "characters" of element called
  */
-int print_u(va_list a)
+int print_u(va_list a, char *s, int *index)
 {
 	int x;
 	unsigned int u;
@@ -67,7 +67,7 @@ int print_u(va_list a)
 		var2 = var2 % var3;
 		var3 = var3 / 10;
 		y++;
-		_putchar ('0' + var1);
+		buffer(s, ('0' + var1), index);
 	}
 	return (y);
 }
@@ -76,7 +76,7 @@ int print_u(va_list a)
  * @a: element of va_list type
  * Return: number of "characters" of element called
  */
-int print_o(va_list a)
+int print_o(va_list a, char *s, int *index)
 {
 	int x, c, d, y = 0, aux = 0;
 	int arr[32] = {0};
@@ -85,7 +85,7 @@ int print_o(va_list a)
 	x = aux;/* The original decimal number*/
 	if (aux == 0)
 	{
-		_putchar('0');
+		buffer(s, '0', index);
 		return (1);
 	}
 	if (aux < 0)
@@ -97,7 +97,7 @@ int print_o(va_list a)
 	}
 	if (aux >= 0)
 	{
-		y = impresion_o(arr, c);
+		y = impresion_o(arr, c, s, index);
 	}
 	else
 	{
@@ -108,7 +108,7 @@ int print_o(va_list a)
 			else if (arr[d] == 0)
 				arr[d] = 1;
 		}
-		y = impresion_o(arr, 32);
+		y = impresion_o(arr, 32, s, index);
 	}
 	return (y);
 }
