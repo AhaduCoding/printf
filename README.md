@@ -29,7 +29,7 @@ The functions in the `_printf()`  produce output according to a format . This fu
 
 ------------
 ### Compile de file ⚙
-To a file with the function is necessary to add all the `*.c` involved in the program. For that reason to compile type:
+To compile a file with the function is necessary to add all the `*.c` involved in the program (functions, main files, etc). For that reason to compile type:
 
 `gcc -Wall -Werror -Wextra -pedantic *.c -o name_of_executable`
 
@@ -58,7 +58,7 @@ To execute te program type:
 ##### Print binaries numbers:
 * Input: `_printf("Number 10 in base 2 is: %b\n",  10);`
 
-* Output: `Number 10 in base 2 is: 8010`
+* Output: `Number 10 in base 2 is: 1010`
 
 ##### Print numbers in octal (base 8):
 * Input: `_printf("Number 10 in base 8 is: %\o",  10);`
