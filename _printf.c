@@ -1,4 +1,11 @@
 #include "holberton.h"
+/**
+ * buffer - defines a local buffer of 1024 chars
+ * @s: buffer
+ * @x: char to be printed
+ * @index: actual position on buffer
+ * Return: return a function
+ */
 void buffer(char *s, char x, int *index)
 {
 	s[*index] = x;
