@@ -110,5 +110,5 @@ int print_p(va_list a, char *s, int *index)
 		k++;
 		buffer(s, arr[j], index);
 	}
-	return (k);
+	return (k + 2);
 }
