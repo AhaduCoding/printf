@@ -3,6 +3,8 @@
  * impresion_o - print the octal number
  * @a: array to be analized
  * @b: size of array
+ * @s: buffer
+ * @index:position on buffer
  * Return: number of "characters" of element called
  */
 
@@ -40,6 +42,8 @@ int impresion_o(int *a, int b, char *s, int *index)
 /**
  * print_u - print unsigned decimal
  * @a: element of va_list type
+ * @s: buffer
+ * @index:position on buffer
  * Return: number of "characters" of element called
  */
 int print_u(va_list a, char *s, int *index)
@@ -74,6 +78,8 @@ int print_u(va_list a, char *s, int *index)
 /**
  * print_o - print octal number in base 8
  * @a: element of va_list type
+ * @s: buffer
+ * @index:position on buffer
  * Return: number of "characters" of element called
  */
 int print_o(va_list a, char *s, int *index)

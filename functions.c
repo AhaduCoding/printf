@@ -2,6 +2,8 @@
 /**
  * print_c - print characters
  * @a: element of va_list type
+ * @s: buffer
+ * @index: position on buffer
  * Return: number of "characters" of element called
  */
 int print_c(va_list a, char *s, int *index)
@@ -15,6 +17,8 @@ int print_c(va_list a, char *s, int *index)
 /**
  * print_s - print strings
  * @a: element of va_list type
+ * @s: buffer
+ * @index: position on buffer
  * Return: number of "characters" of element called
  */
 int print_s(va_list a, char *s, int *index)
@@ -37,6 +41,8 @@ int print_s(va_list a, char *s, int *index)
 /**
  * print_por - print character %
  * @a: element of va_list type
+ * @s: buffer
+ * @index: position on buffer
  * Return: number of "characters" of element called
  */
 int print_por(va_list a, char *s, int *index)
@@ -48,6 +54,8 @@ int print_por(va_list a, char *s, int *index)
 /**
  * print_id - print numbers in base 10 (integers)
  * @a: element of va_list type
+ * @s: buffer
+ * @index: position on buffer
  * Return: number of "characters" of element called
  */
 int print_id(va_list a, char *s, int *index)
@@ -85,6 +93,8 @@ int print_id(va_list a, char *s, int *index)
 /**
  * print_bin - print numbers in base 2 (binary)
  * @a: element of va_list type
+ * @s: buffer
+ * @index: position on buffer
  * Return: number of "characters" of element printed
  */
 int print_bin(va_list a, char *s, int *index)

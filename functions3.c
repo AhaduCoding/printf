@@ -37,6 +37,8 @@ int switch_h(int sum, int *h, int y)
  * impresion_x - print hexadecimal lowercase
  * @a: the array to be analized
  * @b: size of array
+ * @s: buffer
+ * @index: position on buffer
  * Return: number of "characters" of element called
  */
 int impresion_x(int *a, int b, char *s, int *index)
@@ -79,6 +81,8 @@ int impresion_x(int *a, int b, char *s, int *index)
 /**
  * print_x - print the hexadecimal number in base 16
  * @a: element of va_list type
+ * @s: buffer
+ * @index: position on buffer
  * Return: number of "characters" of element called
  */
 int print_x(va_list a, char *s, int *index)
