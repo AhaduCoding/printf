@@ -44,10 +44,34 @@ int impresion_o(int *a, int b)
  */
 int print_u(va_list a)
 {
-	unsigned int x;
-
+	
+	int x;
+	unsigned int u;
+	unsigned int j, cont = 1;
+	unsigned int var1, num, var2, var3 = 1;
+	int  y = 0;
+	
 	x = (va_arg(a, int));
-	return (x);
+
+	u = x;
+	var2 = u;
+	num = var2;
+	while (num > 9)
+	{
+		num = num / 10;
+		cont++;
+		var3 = var3 * 10;
+	}
+	for (j = 1; j <= cont; j++)
+	{
+		var1 = var2 / var3;
+		var2 = var2 % var3;
+		var3 = var3 / 10;
+		y++;
+		_putchar ('0' + var1);
+	}
+	return (y);
+ 
 }
 /**
  * print_o - print octal number in base 8
