@@ -44,13 +44,12 @@ int impresion_o(int *a, int b)
  */
 int print_u(va_list a)
 {
-	
 	int x;
 	unsigned int u;
 	unsigned int j, cont = 1;
 	unsigned int var1, num, var2, var3 = 1;
 	int  y = 0;
-	
+
 	x = (va_arg(a, int));
 
 	u = x;
@@ -71,7 +70,6 @@ int print_u(va_list a)
 		_putchar ('0' + var1);
 	}
 	return (y);
- 
 }
 /**
  * print_o - print octal number in base 8
