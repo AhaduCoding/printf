@@ -75,6 +75,12 @@ To execute te program type:
 
 * Output: `Holberton\x0ASchool`
 
+##### Print adress of a variable:
+
+* Input: `void *vp = (void *)0x7ffe637541f0;  printf("Expected   : %p\n", vp);`
+
+* Output: `[0x7ffe637541f0]`
+
 ##### Print reversed strings:
 * Input: `_printf("%r\n", "Holberton");`
 
