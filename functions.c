@@ -4,12 +4,12 @@
  * @a: element of va_list type
  * Return: number of "characters" of element called
  */
-int print_c(va_list a)
+int print_c(va_list a, char *s, int *index)
 {
 	int x;
 
 	x = va_arg(a, int);
-	_putchar(x);
+	buffer(s, x, index);
 	return (1);
 }
 /**
@@ -17,7 +17,7 @@ int print_c(va_list a)
  * @a: element of va_list type
  * Return: number of "characters" of element called
  */
-int print_s(va_list a)
+int print_s(va_list a, char *s, int *index)
 {
 	char *x;
 	int y = 0;
@@ -28,7 +28,7 @@ int print_s(va_list a)
 		x = "(null)";
 	while (x[c])
 	{
-		_putchar(x[c]);
+		buffer(s, x[c], index);
 		c++;
 		y++;
 	}
@@ -39,10 +39,10 @@ int print_s(va_list a)
  * @a: element of va_list type
  * Return: number of "characters" of element called
  */
-int print_por(va_list a)
+int print_por(va_list a, char *s, int *index)
 {
 	(void)a;
-	_putchar('%');
+	buffer(s, '%', index);
 	return (1);
 }
 /**
@@ -50,7 +50,7 @@ int print_por(va_list a)
  * @a: element of va_list type
  * Return: number of "characters" of element called
  */
-int print_id(va_list a)
+int print_id(va_list a, char *s, int *index)
 {
 	unsigned int j, cont = 1;
 	unsigned int var1, num, var2, var3 = 1;
@@ -61,7 +61,7 @@ int print_id(va_list a)
 
 	if (x < 0)
 	{
-		_putchar('-');
+		buffer(s, '-', index);
 		var2 = x * (-1);
 		y++;
 	}
@@ -78,7 +78,7 @@ int print_id(va_list a)
 		var2 = var2 % var3;
 		var3 = var3 / 10;
 		y++;
-		_putchar ('0' + var1);
+		buffer(s, ('0' + var1), index);
 	}
 	return (y);
 }
@@ -87,7 +87,7 @@ int print_id(va_list a)
  * @a: element of va_list type
  * Return: number of "characters" of element printed
  */
-int print_bin(va_list a)
+int print_bin(va_list a, char *s, int *index)
 {
 	int x, c, d, y = 0, aux = 0;
 	int arr[32] = {0};
@@ -96,7 +96,7 @@ int print_bin(va_list a)
 	x = aux;/* The original decimal number*/
 	if (aux == 0)
 	{
-		_putchar('0');
+		buffer(s, '0', index);
 		return (1);
 	}
 	if (aux < 0)
@@ -112,7 +112,7 @@ int print_bin(va_list a)
 	{
 		for (d = c - 1; d >= 0; d--)/*Prints since the last to the 1st pos*/
 		{
-			_putchar('0' + arr[d]);
+			buffer(s, ('0' + arr[d]), index);
 			y++;
 		}
 	}
@@ -124,7 +124,7 @@ int print_bin(va_list a)
 				arr[d] = 0;
 			else if (arr[d] == 0)
 				arr[d] = 1;
-			_putchar('0' + arr[d]);
+			buffer(s, ('0' + arr[d]), index);
 			y++;
 		}
 	}
