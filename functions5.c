@@ -100,9 +100,11 @@ int print_p(va_list a, char *s, int *index)
 		if (arr[j] != '0')
 			break;
 	}
+	i = 0;
 	for (; j >= 0; j--)
 	{
 		buffer(s, arr[j], index);
+		i++;
 	}
-	return (j);
+	return (i);
 }
