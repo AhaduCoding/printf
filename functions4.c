@@ -39,7 +39,7 @@ int switch_H(int sum, int *h, int y)
  * @b: size of array
  * Return: number of "characters" of element called
  */
-int impresion_X(int *a, int b)
+int impresion_X(int *a, int b, char *s, int *index)
 {
 	int c = 0, y = 0, mul = 1;
 	int sum = 0, i, j;
@@ -70,9 +70,9 @@ int impresion_X(int *a, int b)
 	{
 		if (h[j] == 'A' || h[j] == 'B' || h[j] == 'C' || h[j] == 'D'
 			|| h[j] == 'E' || h[j] == 'F')
-			_putchar(h[j]);
+			buffer(s, h[j], index);
 		else
-			_putchar(h[j] + '0');
+			buffer(s, (h[j] + '0'), index);
 	}
 		return (y);
 }
@@ -81,7 +81,7 @@ int impresion_X(int *a, int b)
  * @a: element of va_list type
  * Return: number of "characters" of element called
  */
-int print_X(va_list a)
+int print_X(va_list a, char *s, int *index)
 {
 	int x, c, d, y = 0, aux = 0;
 	int arr[32] = {0};
@@ -90,7 +90,7 @@ int print_X(va_list a)
 	x = aux;/* The original decimal number*/
 	if (aux == 0)
 	{
-		_putchar('0');
+		buffer(s, '0', index);
 		return (1);
 	}
 	if (aux < 0)
@@ -102,7 +102,7 @@ int print_X(va_list a)
 	}
 	if (aux >= 0)
 	{
-		y = impresion_X(arr, c);
+		y = impresion_X(arr, c, s, index);
 	}
 	else
 	{
@@ -113,7 +113,7 @@ int print_X(va_list a)
 			else if (arr[d] == 0)
 				arr[d] = 1;
 		}
-		y = impresion_X(arr, 32);
+		y = impresion_X(arr, 32, s, index);
 	}
 	return (y);
 }
