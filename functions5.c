@@ -78,7 +78,7 @@ int print_p(va_list a, char *s, int *index)
 	void *p1;
 	long int tam = 0, var;
 	int i, j, z = 0, k = 0;
-	char *n = "(null)", *hex = "0123456789abcdef", arr[16] = "";
+	char *n = "(nil)", *hex = "0123456789abcdef", arr[16] = "";
 
 	p1 = va_arg(a, void *);
 	if (!p1)
