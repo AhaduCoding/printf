@@ -27,7 +27,7 @@ int (*getfunction(char c))(va_list a, char *s, int *index)
 	choose l[] = {
 		{'c', print_c}, {'s', print_s}, {'%', print_por}, {'i', print_id},
 		{'d', print_id}, {'b', print_bin}, {'u', print_u}, {'o', print_o},
-		{'x', print_x}, {'X', print_X}, {'\0', NULL}
+		{'x', print_x}, {'X', print_X}, {'S', print_S}, {'\0', NULL}
 	};
 	for (c1 = 0; l[c1].c != '\0'; c1++)
 	{
