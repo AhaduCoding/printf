@@ -1,10 +1,20 @@
 #include "holberton.h"
+void buffer(char *s, char x, int *index)
+{
+	s[*index] = x;
+	*index = *index + 1;
+	if (*index == 1024)
+	{
+		write(1, s, *index);
+		*index = 0;
+	}
+}
 /**
  * getfunction - gets the function choose
  * @c: char to find
  * Return: return a function
  */
-int (*getfunction(char c))(va_list a)
+int (*getfunction(char c))(va_list a, char *s, int *index)
 {
 	int c1;
 	choose l[] = {
@@ -31,17 +41,23 @@ int (*getfunction(char c))(va_list a)
  */
 int _printf(const char *format, ...)
 {
-	int c1 = 0, x = -1, (*f)(va_list);
+	int c1 = 0, w = 0, x = -1, (*f)(va_list, char *s, int *m);
+	int *index;
+	char *s;
 	va_list elements;
 
 	va_start(elements, format);
+	s = malloc(1024);
+	index = &w;
+	if (!s)
+		return (-1);
 	if (format)
 	{
 		x = 0;
 		for (; format[c1] != '\0'; c1++, x++)
 		{
 			if (format[c1] != '%')
-				_putchar(format[c1]);
+				buffer(s, format[c1], index);
 			else if (format[c1] == '%' && format[c1 + 1] == '\0')
 			{
 				return (-1);
@@ -51,14 +67,17 @@ int _printf(const char *format, ...)
 				f = getfunction(format[c1 + 1]);
 				if (f)
 				{
-					x = (x + f(elements)) - 1;
+					x = (x + f(elements, s, index)) - 1;
 					c1++;
 				}
 				else
-					_putchar(format[c1]);
+					buffer(s, format[c1], index);
 			}
 		}
 	}
+	if (*index != 1024)
+		write(1, s, *index);
+	free(s);
 	va_end(elements);
 	return (x);
 }

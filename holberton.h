@@ -1,7 +1,8 @@
 #ifndef DREAMTEAM
 #define DREAMTEAM
-#include<stdarg.h>
-#include<stdlib.h>
+#include <stdarg.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 /**
  * struct a - this structure is going to give us the format
@@ -11,20 +12,21 @@
 typedef struct a
 {
 	char c;
-	int (*p)(va_list list);
+	int (*p)(va_list list, char *s, int *index);
 } choose;
 
 int _printf(const char *format, ...);
 int _putchar(char c);
+void buffer(char *s, char x, int *index);
 /*functions.c*/
-int print_c(va_list a);
-int print_s(va_list a);
-int print_por(va_list a);
-int print_id(va_list a);
-int print_bin(va_list a);
+int print_c(va_list a, char *s, int *index);
+int print_s(va_list a, char *s, int *index);
+int print_por(va_list a, char *s, int *index);
+int print_id(va_list a, char *s, int *index);
+int print_bin(va_list a, char *s, int *index);
 /*functions2.c*/
-int print_u(va_list a);
-int print_o(va_list a);
-int print_x(va_list a);
-int print_X(va_list a);
+int print_u(va_list a, char *s, int *index);
+int print_o(va_list a, char *s, int *index);
+int print_x(va_list a, char *s, int *index);
+int print_X(va_list a, char *s, int *index);
 #endif
