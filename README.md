@@ -80,7 +80,7 @@ The functions in the `_printf()`  produce output according to a format . This fu
 | ------------ | ------------ |
 |**_printf.c()**   | Contains the main function of  _printf   |
 | **functions.c ** |Contains: <br> -  **print_c:** function which allows to print characters.<br>- **print_s:** function which allows to print characters.<br>- **print_por:** process the character `%`.<br>- **print_id:** prints both integers and decimal numbers.|
-|**functions2.c**|Contains:<br>- **impresion_o:** prints a base8 number.<br>- **print_u:** prints unsigned int<br>- **print_o: ** convert the number to octal and sends the results to impresion_o.<br>- **print_2X: **converts and prints a decimal number to 2 digits Hexadecimal.<br>- **print_S: ** prints the non-printable characters. |
-|**functions3.c**|Contains:<br>-**switch_h:** select the character for hexadecimals.<br>- **impresion_x: **prints the hexadecimal number.<br>-**print_x: ** convert the number to hexadecimal and sends the number to impresion_x.|
+|**functions2.c**|Contains:<br>- **impresion_o:** prints a base8 number.<br>- **print_u:** prints unsigned int<br>- **print_o:** convert the number to octal and sends the results to impresion_o.<br>- **print_2X**converts and prints a decimal number to 2 digits Hexadecimal.<br>- **print_S:** prints the non-printable characters. |
+|**functions3.c**|Contains:<br>-**switch_h:** select the character for hexadecimals.<br>- **impresion_x**prints the hexadecimal number.<br>-**print_x:** convert the number to hexadecimal and sends the number to impresion_x.|
 |**functions4.c**|Contains:<br>-switch_H, impresion_x, print_x. Prints hexadecimal number but uppercase.|
-|**functions5.c**|Contains:<br>-**print_R:** prints a ROT13 string.<br>-**print_r:**prints a reversed string.<br>-**print_p:** prints the adress of a pointer.|
+|**functions5.c**|Contains:<br>-**print_R:** prints a ROT13 string.<br>-**print_r**prints a reversed string.<br>-**print_p:** prints the adress of a pointer.|
