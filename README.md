@@ -1,14 +1,14 @@
-# Readme _printf function
+# Readme _printf function 📚
 ------------
 
 Custom implementation of the function `printf` as a project for Holberton School. In this project we apply the knowledge that we have gotten  in C programming language.
 
 ------------
 
-### Description of function
+### Description of function 📚
 The functions in the `_printf()`  produce output according to a format . This function returns the number of characters printed, excluding the null byte used to end output to strings. To use this fuction is needed to include the header file `holberton.h`.
 
-#### Formats
+#### Formats 🛠
 * **%c:** prints characters.
 * **%s:** prints strings.
 * **%d:** prints decimal numbers.
@@ -28,7 +28,7 @@ The functions in the `_printf()`  produce output according to a format . This fu
 `int _printf(const char *format, ...);`
 
 ------------
-### Compile de file
+### Compile de file ⚙
 To a file with the function is necessary to add all the `*.c` involved in the program. For that reason to compile type:
 
 `gcc -Wall -Werror -Wextra -pedantic *.c -o name_of_executable`
