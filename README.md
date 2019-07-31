@@ -106,5 +106,5 @@ To execute te program type:
 
 ### Authors
 
-* Jorge Zafra.
-* Carlos Molano.
+* [Jorge Zafra](http://https://github.com/jorgezafra94/ "Jorge Zafra")
+* [Carlos Molano.](https://github.com/cmmolanos1/ "Carlos Molano.")
