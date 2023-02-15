@@ -3,7 +3,7 @@
 _printf \- format and print data
 .SH SYNOPSIS
 .nf
-.B #include "holberton.h"
+.B #include "main.h"
 .PP
 .BI "int _printf(const char *format, ...);"
 .BI "int _putchar(char c);"
